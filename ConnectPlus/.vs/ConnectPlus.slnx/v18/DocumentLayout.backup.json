@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\57039661837\\Desktop\\ConnectPlus\\ConnectPlus\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{699DD73A-9626-4618-87DE-5E8E6C3102AB}|ConnectPlus\\ConnectPlus.csproj|c:\\users\\57039661837\\desktop\\connectplus\\connectplus\\connectplus\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{699DD73A-9626-4618-87DE-5E8E6C3102AB}|ConnectPlus\\ConnectPlus.csproj|solutionrelative:connectplus\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\57039661837\\Desktop\\ConnectPlus\\ConnectPlus\\ConnectPlus\\appsettings.json",
+              "RelativeDocumentMoniker": "ConnectPlus\\appsettings.json",
+              "ToolTip": "C:\\Users\\57039661837\\Desktop\\ConnectPlus\\ConnectPlus\\ConnectPlus\\appsettings.json",
+              "RelativeToolTip": "ConnectPlus\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-24T19:03:08.497Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
