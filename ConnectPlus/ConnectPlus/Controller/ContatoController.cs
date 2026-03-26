@@ -122,15 +122,25 @@ public class ContatoController : ControllerBase
     public async Task<IActionResult> Atualizar(Guid id, [FromForm] ContatoDTO contato)
     {
         var contatoBuscado = _contatoRepository.BuscarPorId(id);
+
         if (contatoBuscado == null)
         {
             return NotFound("Contato não encontrado");
         }
+
+        // Atualiza os dados básicos
+        contatoBuscado.Nome = contato.Nome;
+        contatoBuscado.FormaContato = contato.FormaDeContato;
+        
+
+        // Atualiza a imagem (se vier uma nova)
         if (contato.Imagem != null && contato.Imagem.Length > 0)
         {
             var pastaRelativa = "wwwroot/imagens";
             var caminhoPasta = Path.Combine(Directory.GetCurrentDirectory(), pastaRelativa);
-            if (!String.IsNullOrEmpty(contatoBuscado.Imagem))
+
+            // Deleta imagem antiga
+            if (!string.IsNullOrEmpty(contatoBuscado.Imagem))
             {
                 var caminhoAntigo = Path.Combine(caminhoPasta, contatoBuscado.Imagem);
                 if (System.IO.File.Exists(caminhoAntigo))
@@ -146,13 +156,17 @@ public class ContatoController : ControllerBase
             {
                 Directory.CreateDirectory(caminhoPasta);
             }
+
             var caminhoCompleto = Path.Combine(caminhoPasta, nomeArquivo);
+
             using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
             {
                 await contato.Imagem.CopyToAsync(stream);
             }
+
             contatoBuscado.Imagem = nomeArquivo;
         }
+
         try
         {
             _contatoRepository.Atualizar(id, contatoBuscado);
