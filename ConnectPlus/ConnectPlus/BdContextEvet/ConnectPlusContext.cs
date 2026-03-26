@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using ConnectPlus.Models;
+﻿using ConnectPlus.WebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ConnectPlus.BdContextEvet;
+namespace ConnectPlus.WebAPI.BdContextConnect;
 
 public partial class ConnectPlusContext : DbContext
 {
     public ConnectPlusContext()
     {
+
     }
 
     public ConnectPlusContext(DbContextOptions<ConnectPlusContext> options)
@@ -22,13 +21,13 @@ public partial class ConnectPlusContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=ConnectPlus;Trusted_connection=True;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=ConnectPlus;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Contato>(entity =>
         {
-            entity.HasKey(e => e.IdContato).HasName("PK__Contato__2AC4F064E9F6D124");
+            entity.HasKey(e => e.IdContato).HasName("PK__Contato__2AC4F064FDCA04E5");
 
             entity.Property(e => e.IdContato).HasDefaultValueSql("(newid())");
 
@@ -39,7 +38,7 @@ public partial class ConnectPlusContext : DbContext
 
         modelBuilder.Entity<TipoContato>(entity =>
         {
-            entity.HasKey(e => e.IdTipoContato).HasName("PK__TipoCont__8D18FEBD85D4E7C9");
+            entity.HasKey(e => e.IdTipoContato).HasName("PK__TipoCont__8D18FEBD9253E919");
 
             entity.Property(e => e.IdTipoContato).HasDefaultValueSql("(newid())");
         });
